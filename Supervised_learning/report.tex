@@ -1,0 +1,177 @@
+
+%\documentclass[12pt, conference, compsocconf ]{IEEEtran}
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{verbatim}
+
+
+\title{INF3490 \\ Supervised Learning with Multilayer Perceptron}
+\author{
+Mandatory Assignment 2\\
+Siddhartha Pandey\\
+\href{mailto:siddharp@ifi.uio.no}{siddharp@ifi.uio.no}
+}
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+
+%\end{abstract}
+
+
+\section*{Introduction}
+This assignment uses supervised learning with a Multi-layer perceptron (MLP) to classify electromyographic signals to its corresponding hand movement. 
+
+%\newpage
+
+\section*{Program}
+
+The program was coded using python. We use \textit{movements.py} to read the data from the given data files. Then from  \textit{movements.py} the data is trained and tested using \textit{mlp.py}. 
+
+We use 6, 8, 12 and 18 nodes in the hidden layer to test our program and the result obtained can be seen in the next section.
+
+\section*{Result} 
+
+The following data shown are the results from running the MLP network on the given data sets.
+The result shown are the confusion table obtained from running the program on the given data sets and the correct percentage.
+
+\verbatiminput{test_data.txt}
+
+
+\subsection*{Hidden Nodes : 6}  
+
+\subsubsection*{Iteration:100}
+\paragraph*{Confusion table :}
+
+\[
+  \begin{matrix}
+   & class1 & class2 & class3 & class4 & class5 & class6 & class7 & class8 \\
+class1 &    10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+class2 &    0 & 9 & 0 & 0 & 0 & 2 & 0 & 0 \\
+class3 &    0 & 0 & 8 & 1 & 0 & 0 & 0 & 0 \\
+class4 &    0 & 0 & 0 & 23 & 0 & 0 & 2 & 0 \\
+class5 &    1 & 0 & 0 & 3 & 16 & 1 & 0 & 0 \\
+class6 &    0 & 0 & 0 & 0 & 0 & 8 & 0 & 0 \\
+class7 &    0 & 0 & 0 & 0 & 0 & 1 & 12 & 0 \\
+class8 &    0 & 0 & 0 & 1 & 0 & 0 & 0 & 13 \\
+  \end{matrix}
+\]
+
+\paragraph*{Percentage Correct: 89.91} 
+
+\subsection*{Hidden Nodes : 8}  
+
+
+\subsubsection*{Iteration:100}
+
+\paragraph*{Confusion table :}
+
+\[
+  \begin{matrix}
+   & class1 & class2 & class3 & class4 & class5 & class6 & class7 & class8 \\
+ class1 &   10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+ class2 &   0 & 9 & 0 & 0 & 0 & 2 & 0 & 0 \\
+ class3 &   0 & 0 & 8 & 0 & 0 & 0 & 0 & 0 \\
+ class4 &   0 & 0 & 0 & 24 & 0 & 0 & 0 & 0 \\
+ class5 &   1 & 0 & 0 & 2 & 16 & 0 & 0 & 0 \\
+ class6 &   0 & 0 & 0 & 0 & 0 & 9 & 0 & 0 \\
+ class7 &   0 & 0 & 0 & 0 & 0 & 1 & 14 & 0 \\
+ class8 &   0 & 0 & 0 & 2 & 0 & 0 & 0 & 13 \\
+  \end{matrix}
+\]
+
+\paragraph*{Percentage Correct: 92.79}  
+
+\subsection*{Hidden Nodes : 12}  
+
+\subsubsection*{Iteration:100}
+\paragraph*{Confusion table :}
+
+\[
+  \begin{matrix}
+   & class1 & class2 & class3 & class4 & class5 & class6 & class7 & class8 \\
+class1 &    10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+class2 &    0 & 9 & 0 & 0 & 0 & 2 & 0 & 0 \\
+class3 &    0 & 0 & 8 & 1 & 0 & 0 & 0 & 0 \\
+class4 &    0 & 0 & 0 & 24 & 0 & 0 & 0 & 0 \\
+class5 &     1 & 0 & 0 & 3 & 16 & 1 & 0 & 0 \\
+class6 &    0 & 0 & 0 & 0 & 0 & 9 & 0 & 0 \\
+class7 &    0 & 0 & 0 & 0 & 0 & 0 & 14 & 0 \\
+class8 &    0 & 0 & 0 & 0 & 0 & 0 & 0 & 13 \\
+  \end{matrix}
+\]
+\paragraph*{Percentage Correct: 92.79} 
+\subsection*{Hidden Nodes : 18}  
+
+\subsubsection*{Iteration:100}
+\paragraph*{Confusion table :}
+
+\[
+  \begin{matrix}
+  & class1 & class2 & class3 & class4 & class5 & class6 & class7 & class8 \\
+class1 &    10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+class2 &    0 & 9 & 0 & 0 & 0 & 2 & 0 & 0 \\
+class3 &    0 & 0 & 8 & 1 & 0 & 0 & 0 & 0 \\
+class4 &    0 & 0 & 0 & 24 & 0 & 0 & 0 & 0 \\
+class5 &    1 & 0 & 0 & 3 & 16 & 1 & 0 & 0 \\
+class6 &    0 & 0 & 0 & 0 & 0 & 7 & 0 & 0 \\
+class7 &    0 & 0 & 0 & 0 & 0 & 2 & 14 & 0 \\
+class8 &    0 & 0 & 0 & 2 & 0 & 0 & 0 & 13 \\
+  \end{matrix}
+\]
+\paragraph*{Percentage Correct: 90.99} 
+
+\section*{}
+
+Hidden Layer with the greater no. of nodes that is 12 and 18 have higher correct percentage than with less no. of nodes.
+By looking at the confusion tables given above we can say that class 4 and class 5 were likely to mistaken for each other.
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
